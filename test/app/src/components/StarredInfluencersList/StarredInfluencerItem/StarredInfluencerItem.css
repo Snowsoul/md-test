@@ -1,5 +1,7 @@
-.starred_influencer_wrapper {
-    
+.starred_influencer_wrapper:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .remove_button_wrapper {

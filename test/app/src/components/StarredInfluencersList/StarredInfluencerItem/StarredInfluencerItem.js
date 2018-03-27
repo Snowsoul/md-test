@@ -20,7 +20,7 @@ const StarredInfluencerItem = props => {
                 </div>
             </div>
             <div className="remove_button_wrapper">
-                <RemoveButton />
+                <RemoveButton onClick={() => props.onRemove(props.data.influencer_id)} />
             </div>
         </div>
     );

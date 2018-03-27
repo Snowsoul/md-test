@@ -1,6 +1,7 @@
 import { 
     STARRED_INFLUENCERS_FETCHED, 
     STARRED_INFLUENCERS_FETCHING,
+    STARRED_INFLUENCER_REMOVE,
     SORT_BY_CHANGE
 } from '../actions/actionTypes';
 
@@ -35,7 +36,14 @@ const followersAscCompare = (a, b) => {
     return a.statistics.followers - b.statistics.followers;
 }
 
-const sortList = (list, compare) => [...list].sort(compare)
+const sortList = (list, compare) => [...list].sort(compare);
+
+const cacheSortByLists = (list) => {
+    influencers.engagementDesc = sortList(list, engagementDescCompare);
+    influencers.engagementAsc = sortList(list, engagementAscCompare);            
+    influencers.followersDesc = sortList(list, followersDescCompare);
+    influencers.followersAsc = sortList(list, followersAscCompare);    
+}
 
 const starredInfluencers = (state = defaultState, action) => {
     switch (action.type) {
@@ -49,10 +57,7 @@ const starredInfluencers = (state = defaultState, action) => {
 
             // Cache the lists and prepare it for the sort by filter
             influencers.initial = [...action.starredInfluencers];
-            influencers.engagementDesc = sortList(action.starredInfluencers, engagementDescCompare);
-            influencers.engagementAsc = sortList(action.starredInfluencers, engagementAscCompare);            
-            influencers.followersDesc = sortList(action.starredInfluencers, followersDescCompare);
-            influencers.followersAsc = sortList(action.starredInfluencers, followersAscCompare);    
+            cacheSortByLists(action.starredInfluencers);  
 
             return {
                 ...state,
@@ -74,6 +79,17 @@ const starredInfluencers = (state = defaultState, action) => {
                 ...state,
                 sortBy: { value: action.option.value },
                 influencers: influencers[action.option.value]
+            }
+
+        case STARRED_INFLUENCER_REMOVE:
+            const listWithoutItem = [...influencers[state.sortBy.value]].filter(item => item.influencer_id !== action.id);
+            
+            // Update sort by lists every time an item is being removed
+            cacheSortByLists(listWithoutItem);
+
+            return {
+                ...state,
+                influencers: listWithoutItem
             }
         default:
             return state;

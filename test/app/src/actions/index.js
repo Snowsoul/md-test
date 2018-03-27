@@ -3,7 +3,8 @@ import {
     SUGGESTED_INFLUENCERS_FETCHED,
     STARRED_INFLUENCERS_FETCHED,
     STARRED_INFLUENCERS_FETCHING,
-    SORT_BY_CHANGE
+    SORT_BY_CHANGE,
+    STARRED_INFLUENCER_REMOVE
 } from './actionTypes';
 
 export const addSuggestedInfluencerToStarred = () => ({});
@@ -25,6 +26,11 @@ export const starredInfluencersFetching = () => ({
 export const starredInfluencersFetched = (starredInfluencers) => ({ 
     type: STARRED_INFLUENCERS_FETCHED,
     starredInfluencers
+});
+
+export const removeInfluencer = (id) => ({ 
+    type: STARRED_INFLUENCER_REMOVE,
+    id
 });
 
 export const sortByChange = option => ({ type: SORT_BY_CHANGE, option });

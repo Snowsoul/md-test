@@ -2,7 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux'
 import SortSelect from '../SortSelect/SortSelect';
 import StarredInfluencerItem from './StarredInfluencerItem/StarredInfluencerItem';
-import { starredInfluencersFetched, starredInfluencersFetching, sortByChange } from '../../actions';
+import { 
+    starredInfluencersFetched, 
+    starredInfluencersFetching, 
+    sortByChange,
+    removeInfluencer
+} from '../../actions';
 
 import config from '../../config';
 
@@ -27,6 +32,10 @@ class StarredInfluencersList extends React.Component {
     onSortByChange = (option) => {
         this.props.sortByChange(option);
     }
+
+    onInfluencerRemove = (id) => {
+        this.props.removeInfluencer(id);
+    }
      
     render() {
         const { starredInfluencers } = this.props;
@@ -49,6 +58,7 @@ class StarredInfluencersList extends React.Component {
                             <StarredInfluencerItem 
                                 key={item.influencer_id}
                                 data={item}
+                                onRemove={ this.onInfluencerRemove }
                             />
                         ))
                     }
@@ -61,7 +71,8 @@ class StarredInfluencersList extends React.Component {
 const mapDispatchToProps = { 
     starredInfluencersFetching,
     starredInfluencersFetched,
-    sortByChange
+    sortByChange,
+    removeInfluencer
 };
 
 const mapStateToProps = state => ({
