@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import SortSelect from '../SortSelect/SortSelect';
 import StarredInfluencerItem from './StarredInfluencerItem/StarredInfluencerItem';
-import { starredInfluencersFetched, starredInfluencersFetching } from '../../actions';
+import { starredInfluencersFetched, starredInfluencersFetching, sortByChange } from '../../actions';
 
 import config from '../../config';
 
@@ -13,7 +13,7 @@ class StarredInfluencersList extends React.Component {
         this.fetchData();
      }
  
-     fetchData() {
+    fetchData() {
          this.props.starredInfluencersFetching();
  
          fetch(config.api.starredInfluencersEndpoint)
@@ -22,18 +22,25 @@ class StarredInfluencersList extends React.Component {
              this.props.starredInfluencersFetched(repsonse.data); 
          })
          .catch(err => console.error(err));
-     }
+    }
+
+    onSortByChange = (option) => {
+        this.props.sortByChange(option);
+    }
      
     render() {
-        const { starredInfluencers, loading } = this.props;
-        const { influencers } = starredInfluencers;
+        const { starredInfluencers } = this.props;
+        const { influencers, sortBy, loading } = starredInfluencers;
         
         return (
             <div className='starredinfluencerslist_wrapper'>
                 <header>
                     <h2> Starred Influencers </h2>
                     <div className="sort_wrapper">
-                        <SortSelect />
+                        <SortSelect 
+                            onChange={ this.onSortByChange }
+                            selectedOption={ sortBy }
+                        />
                     </div>
                 </header>
                 <section>
@@ -53,7 +60,8 @@ class StarredInfluencersList extends React.Component {
 
 const mapDispatchToProps = { 
     starredInfluencersFetching,
-    starredInfluencersFetched
+    starredInfluencersFetched,
+    sortByChange
 };
 
 const mapStateToProps = state => ({

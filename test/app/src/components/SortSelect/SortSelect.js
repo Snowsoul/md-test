@@ -4,16 +4,12 @@ import 'react-select/dist/react-select.css';
 import './SortSelect.css';
 
 class SortSelect extends React.Component {
-    state = {
-        selectedOption: '',
-    }
-
     handleChange = (selectedOption) => {
-        this.setState({ selectedOption });
+        this.props.onChange(selectedOption);
     }
 
     render() {
-        const { selectedOption } = this.state;
+        const { selectedOption } = this.props;
         const value = selectedOption && selectedOption.value;
         
         return (
@@ -25,8 +21,10 @@ class SortSelect extends React.Component {
                         value={value}
                         onChange={this.handleChange}
                         options={[
-                            { value: 'one', label: 'Engagement (High - Low)' },
-                            { value: 'two', label: 'Engagement (Low - High)' },
+                            { value: 'engagementDesc', label: 'Engagement (High - Low)' },
+                            { value: 'engagementAsc', label: 'Engagement (Low - High)' },
+                            { value: 'followersDesc', label: 'Followers (High - Low)' },
+                            { value: 'followersAsc', label: 'Followers (Low - High)' },
                         ]}
                     />
                 </div>
