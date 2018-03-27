@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import SuggestedInfluencerItem from './SuggestedInfluencerItem/SuggestedInfluencerItem';
 import './SuggestedInfluencersList.css';
 import { suggestedInfluencersFetched, suggestedInfluencersFetching } from '../../actions';
+import config from '../../config';
 
 class SuggestedInfluencersList extends React.Component {
     componentDidMount() {
@@ -12,7 +13,7 @@ class SuggestedInfluencersList extends React.Component {
     fetchData() {
         this.props.suggestedInfluencersFetching();
 
-        fetch("/exampleData/suggested_influencers.json")
+        fetch(config.api.suggestedInfluencersEndpoint)
         .then(repsonse => repsonse.json())
         .then(repsonse => { 
             this.props.suggestedInfluencersFetched(repsonse.data); 

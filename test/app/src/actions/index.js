@@ -1,6 +1,8 @@
 import { 
     SUGGESTED_INFLUENCERS_FETCHING, 
-    SUGGESTED_INFLUENCERS_FETCHED 
+    SUGGESTED_INFLUENCERS_FETCHED,
+    STARRED_INFLUENCERS_FETCHED,
+    STARRED_INFLUENCERS_FETCHING 
 } from './actionTypes';
 
 export const addSuggestedInfluencerToStarred = () => ({});
@@ -13,4 +15,13 @@ export const suggestedInfluencersFetching = () => ({
 export const suggestedInfluencersFetched = (suggestedInfluencers) => ({ 
     type: SUGGESTED_INFLUENCERS_FETCHED,
     suggestedInfluencers
+});
+
+export const starredInfluencersFetching = () => ({ 
+    type: STARRED_INFLUENCERS_FETCHING 
+});
+
+export const starredInfluencersFetched = (starredInfluencers) => ({ 
+    type: STARRED_INFLUENCERS_FETCHED,
+    starredInfluencers
 });

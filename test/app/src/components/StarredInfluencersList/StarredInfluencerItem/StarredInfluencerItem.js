@@ -5,17 +5,18 @@ import Statistic from '../../Statistic/Statistic';
 
 import './StarredInfluencerItem.css';
 
-const StarredInfluencerItem = () => {
+const StarredInfluencerItem = props => {
+    const { statistics } = props.data;
 
     return (
         <div className="starred_influencer_wrapper">
             <div className='starredinfluenceritem_wrapper'>
                 <div className="influencer_item_wrapper">
-                    <InfluencerItem />
+                    <InfluencerItem data={props.data} />
                 </div>
                 <div className="starred_influencer_utils">
-                    <Statistic text="Engagement" value="6.84%" />
-                    <Statistic />
+                    <Statistic text="Engagement" value={`${statistics.engagement}%`} />
+                    <Statistic text="Followers" value={statistics.followers} />
                 </div>
             </div>
             <div className="remove_button_wrapper">

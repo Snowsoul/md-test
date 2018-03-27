@@ -8,7 +8,7 @@ const defaultState = {
     influencers: []
 };
 
-const starredInfluencers = (state = defaultState, action) => {
+const sugestedInfluencers = (state = defaultState, action) => {
     switch (action.type) {
         case SUGGESTED_INFLUENCERS_FETCHING:
             return {
@@ -27,4 +27,4 @@ const starredInfluencers = (state = defaultState, action) => {
     }
 }
 
-export default starredInfluencers;
+export default sugestedInfluencers;
