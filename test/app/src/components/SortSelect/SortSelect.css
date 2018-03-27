@@ -1,0 +1,14 @@
+.sortselect_wrapper .text{
+    float: left;
+    width: 30%;
+    padding-top: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    color: #bbb;
+    text-align: right;
+}
+
+.select_wrapper {
+    float: left;
+    width: 70%;
+}

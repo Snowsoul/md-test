@@ -1,0 +1,13 @@
+.suggested_influencer_item_wrapper .influencer_profile {
+    width: 90%;
+    float: left;
+}
+
+.suggested_influencer_item_wrapper .influencer_utils {
+    width: 10%;
+    float: left;
+    padding-top: 15px;
+    padding-right: 10px;
+    box-sizing: border-box;
+
+}

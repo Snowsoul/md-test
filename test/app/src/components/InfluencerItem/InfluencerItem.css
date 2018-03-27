@@ -1,0 +1,38 @@
+.influenceritem_wrapper {
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.influenceritem_wrapper:hover .influencer_details h3 {
+    color: rgba(234,136,149,1);
+}
+
+.influencer_avatar {
+    float: left;
+}
+
+.influenceritem_wrapper:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.influenceritem_wrapper .influencer_details {
+    float: left;
+    margin-top: 8px;
+    margin-left: 8px;
+} 
+
+.influenceritem_wrapper .influencer_details h3 {
+    margin: 0;
+    font-family: sans-serif;
+    transition: color .2s ease-in-out;
+    color: #333333;
+}
+
+.influenceritem_wrapper .influencer_details small {
+    margin: 0;
+    font-family: sans-serif;
+    color: #888888;
+}

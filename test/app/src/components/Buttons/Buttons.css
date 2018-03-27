@@ -1,0 +1,21 @@
+.add_button, .remove_button {
+    background: transparent;
+    border: 0;
+    color: rgba(187, 187, 187, 0.7);
+    float: right;
+    font-size: 18px;
+    cursor: pointer;
+    outline: none;
+}
+
+.add_button:hover, .remove_button:hover {
+    color: rgba(187, 187, 187, 1)    
+}
+
+.add_button {
+
+}
+
+.remove_button {
+
+}

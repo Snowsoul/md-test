@@ -1,0 +1,15 @@
+.suggestedinfluencerslist_wrapper{
+    float: left;
+    border-right: 1px solid #efefef;
+    width: 30%;
+    box-sizing: border-box;
+    padding: 15px;
+    min-height: 500px;
+}
+
+.suggestedinfluencerslist_wrapper h2 {
+    color: #333333;
+    font-family: sans-serif;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
