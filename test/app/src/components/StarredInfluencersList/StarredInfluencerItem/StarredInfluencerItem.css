@@ -1,4 +1,17 @@
+.starred_influencer_wrapper {
+    
+}
+
+.remove_button_wrapper {
+    width: 5%;
+    float: left;
+    padding-top: 15px;
+    box-sizing: border-box;
+}
+
 .starredinfluenceritem_wrapper{
+    float: left;
+    width: 90%;
     background: #fafafa;
     border: 1px solid #f0f0f0;
     border-radius: 5px;
