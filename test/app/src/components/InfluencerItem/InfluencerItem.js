@@ -5,8 +5,7 @@ import './InfluencerItem.css';
 
 class InfluencerItem extends React.Component {
     render() {
-        const { 
-            influencer_id,
+        const {
             influencer_full_name,
             influencer_instagram_username,
             influencer_instagram_profile_image

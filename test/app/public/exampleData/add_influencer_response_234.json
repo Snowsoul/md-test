@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "data": {
+    "influencer_id": 234,
+    "influencer_full_name": "Emily White",
+    "influencer_instagram_username": "emwhite",
+    "influencer_instagram_profile_image": "https://randomuser.me/api/portraits/women/14.jpg",
+    "statistics": {
+      "followers": 3005,
+      "engagement": "7.24"
+    }
+  }
+}

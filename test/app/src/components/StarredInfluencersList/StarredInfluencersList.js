@@ -52,6 +52,10 @@ class StarredInfluencersList extends React.Component {
                         />
                     </div>
                 </header>
+
+                { /* Could be replaced with a spinner or some other loading method */ }
+                { loading && <p> Loading ... </p> }
+                
                 <section>
                     {
                         influencers.map( (item) => (

@@ -2,7 +2,6 @@ import React from 'react';
 import InfluencerItem from '../../InfluencerItem/InfluencerItem';
 import { RemoveButton } from '../../Buttons/Buttons';
 import Statistic from '../../Statistic/Statistic';
-
 import './StarredInfluencerItem.css';
 
 const StarredInfluencerItem = props => {
@@ -24,7 +23,6 @@ const StarredInfluencerItem = props => {
             </div>
         </div>
     );
-
 }
 
 export default StarredInfluencerItem;
