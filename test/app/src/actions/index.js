@@ -8,9 +8,6 @@ import {
     SUGGESTED_INFLUENCER_MOVE
 } from './actionTypes';
 
-export const addSuggestedInfluencerToStarred = () => ({});
-export const removeStarredInfluencer = () => ({});
-
 export const suggestedInfluencersFetching = () => ({ 
     type: SUGGESTED_INFLUENCERS_FETCHING 
 });
